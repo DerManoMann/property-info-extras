@@ -1,0 +1,48 @@
+{
+    "name": "radebatz/property-info-extras",
+    "description": "Property Info extras.",
+    "license": [
+        "MIT"
+    ],
+    "homepage": "http://radebatz.net/mano/",
+    "authors": [
+        {
+            "name": "Martin Rademacher",
+            "email": "mano@radebatz.org"
+        }
+    ],
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Radebatz\\PropertyInfoExtras\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Radebatz\\PropertyInfoExtras\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    },
+    "scripts": {
+        "fix-cs": [
+            "vendor/bin/php-cs-fixer fix src",
+            "vendor/bin/php-cs-fixer fix tests"
+        ]
+    },
+    "require": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "phpunit/phpunit": "^8.3",
+        "symfony/property-info": "^4.3"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.15"
+    }
+}
