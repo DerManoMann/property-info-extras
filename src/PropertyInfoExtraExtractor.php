@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Radebatz\PropertyInfoExtras;
 
-use Symfony\Component\PropertyInfo\PropertyInfoExtractor as BasePropertyInfoExtractor;
+use Symfony\Component\PropertyInfo\PropertyInfoExtractor;
 use Symfony\Component\PropertyInfo\PropertyInfoExtractorInterface;
 use Symfony\Component\PropertyInfo\PropertyInitializableExtractorInterface;
 use Symfony\Component\PropertyInfo\Type;
@@ -22,7 +22,7 @@ use Symfony\Component\PropertyInfo\Type;
  * Adds to the {@see PropertyInfoExtractorInterface} implementation, adding methods to merge results of all
  * extractors.
  */
-class PropertyInfoExtractor extends BasePropertyInfoExtractor
+class PropertyInfoExtraExtractor extends PropertyInfoExtractor
 {
     protected $listExtractors;
     protected $typeExtractors;
@@ -48,6 +48,9 @@ class PropertyInfoExtractor extends BasePropertyInfoExtractor
         $this->initializableExtractors = $initializableExtractors;
     }
 
+    /**
+     * Gets the merged list of properties available for the given class.
+     */
     public function getAllProperties($class, array $context = [])
     {
         $values = [];
@@ -61,6 +64,9 @@ class PropertyInfoExtractor extends BasePropertyInfoExtractor
         return $values ?: null;
     }
 
+    /**
+     * Gets merged types of a property.
+     */
     public function getAllTypes($class, $property, array $context = [])
     {
         $values = [];
@@ -115,6 +121,11 @@ class PropertyInfoExtractor extends BasePropertyInfoExtractor
         return $cval;
     }
 
+    /**
+     * Is the property readable?
+     * 
+     * @return bool|null `true` if at least one extractor reports `true`.
+     */
     public function isAllReadable($class, $property, array $context = [])
     {
         $readable = null;
@@ -128,6 +139,11 @@ class PropertyInfoExtractor extends BasePropertyInfoExtractor
         return $readable;
     }
 
+    /**
+     * Is the property writable?
+     * 
+     * @return bool|null `true` if at least one extractor reports `true`.
+     */
     public function isAllWritable($class, $property, array $context = [])
     {
         $writable = null;

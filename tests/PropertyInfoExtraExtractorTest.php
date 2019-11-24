@@ -5,13 +5,13 @@ namespace Radebatz\PropertyInfoExtras\Tests;
 use PHPUnit\Framework\TestCase;
 use Radebatz\PropertyInfoExtras\Extractor\DocBlockCache;
 use Radebatz\PropertyInfoExtras\Extractor\DocBlockMagicExtractor;
-use Radebatz\PropertyInfoExtras\PropertyInfoExtractor;
+use Radebatz\PropertyInfoExtras\PropertyInfoExtraExtractor;
 use Radebatz\PropertyInfoExtras\Tests\Models\SimplePopo;
 use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;
 use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
 use Symfony\Component\PropertyInfo\Type;
 
-class PropertyInfoExtractorTest extends TestCase
+class PropertyInfoExtraExtractorTest extends TestCase
 {
     protected $propertyInfoExtractor;
 
@@ -39,7 +39,7 @@ class PropertyInfoExtractorTest extends TestCase
             $phpDocMagicExtractor,
         ];
 
-        $this->propertyInfoExtractor = new PropertyInfoExtractor(
+        $this->propertyInfoExtraExtractor = new PropertyInfoExtraExtractor(
             $listExtractors,
             $typeExtractors,
             [],
@@ -64,7 +64,7 @@ class PropertyInfoExtractorTest extends TestCase
     /** @test */
     public function allProperties()
     {
-        $properties = $this->propertyInfoExtractor->getAllProperties(Models\MagicPopo::class);
+        $properties = $this->propertyInfoExtraExtractor->getAllProperties(Models\MagicPopo::class);
 
         $this->assertEquals(array_keys($this->typesData()), $properties);
     }
@@ -75,7 +75,7 @@ class PropertyInfoExtractorTest extends TestCase
      */
     public function allTypes($property, $buildInType, $class = null, $collectionValueType = null, $collectionValueClass = null)
     {
-        $types = $this->propertyInfoExtractor->getAllTypes(Models\MagicPopo::class, $property);
+        $types = $this->propertyInfoExtraExtractor->getAllTypes(Models\MagicPopo::class, $property);
 
         $this->assertTrue(is_array($types));
         $this->assertCount(1, $types);
@@ -104,7 +104,7 @@ class PropertyInfoExtractorTest extends TestCase
      */
     public function allReadable($property, $buildInType, $class = null, $collectionValueType = null, $collectionValueClass = null)
     {
-        $readable = $this->propertyInfoExtractor->isAllReadable(Models\MagicPopo::class, $property);
+        $readable = $this->propertyInfoExtraExtractor->isAllReadable(Models\MagicPopo::class, $property);
 
         $this->assertTrue($readable);
     }
@@ -115,7 +115,7 @@ class PropertyInfoExtractorTest extends TestCase
      */
     public function allWritable($property, $buildInType, $class = null, $collectionValueType = null, $collectionValueClass = null)
     {
-        $writeable = $this->propertyInfoExtractor->isAllWritable(Models\MagicPopo::class, $property);
+        $writeable = $this->propertyInfoExtraExtractor->isAllWritable(Models\MagicPopo::class, $property);
 
         $this->assertTrue($writeable);
     }

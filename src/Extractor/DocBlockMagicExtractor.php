@@ -19,6 +19,9 @@ use Symfony\Component\PropertyInfo\PropertyListExtractorInterface;
 use Symfony\Component\PropertyInfo\PropertyTypeExtractorInterface;
 use Symfony\Component\PropertyInfo\Util\PhpDocTypeHelper;
 
+/**
+ * Magic method docblock extractor.
+ */
 class DocBlockMagicExtractor implements PropertyListExtractorInterface, PropertyTypeExtractorInterface, PropertyAccessExtractorInterface
 {
     protected $dockBlockCache;
