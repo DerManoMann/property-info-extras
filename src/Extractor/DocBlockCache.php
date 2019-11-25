@@ -75,7 +75,12 @@ class DocBlockCache
         }
 
         $docContext = $this->contextFactory->createFromReflector($reflectionClass);
-        $docBlock = $this->docBlockFactory->create($reflectionClass, $docContext);
+        try {
+            // these are optional...
+            $docBlock = $this->docBlockFactory->create($reflectionClass, $docContext);
+        } catch (\InvalidArgumentException $e) {
+            return null;
+        }
 
         return $this->docBlocks[$class] = $docBlock;
     }
