@@ -77,7 +77,7 @@ class DocBlockMagicExtractor implements PropertyListExtractorInterface, Property
         }
 
         $properties = $this->getProperties($class, $context);
-        if (!in_array($property, $properties)) {
+        if (null === $properties || !in_array($property, $properties)) {
             return null;
         }
 
