@@ -15,4 +15,16 @@ namespace Radebatz\PropertyInfoExtras\Tests\Models;
 
 class SimplePopo
 {
+    /** @var string */
+    protected $name;
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
 }
