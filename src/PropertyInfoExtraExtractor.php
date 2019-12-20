@@ -13,16 +13,19 @@ declare(strict_types=1);
 
 namespace Radebatz\PropertyInfoExtras;
 
+use Symfony\Component\PropertyInfo\PropertyAccessExtractorInterface;
+use Symfony\Component\PropertyInfo\PropertyDescriptionExtractorInterface;
 use Symfony\Component\PropertyInfo\PropertyInfoExtractor;
 use Symfony\Component\PropertyInfo\PropertyInfoExtractorInterface;
 use Symfony\Component\PropertyInfo\PropertyInitializableExtractorInterface;
+use Symfony\Component\PropertyInfo\PropertyListExtractorInterface;
+use Symfony\Component\PropertyInfo\PropertyTypeExtractorInterface;
 use Symfony\Component\PropertyInfo\Type;
 
 /**
- * Adds to the {@see PropertyInfoExtractorInterface} implementation, adding methods to merge results of all
- * extractors.
+ * Default {@see PropertyInfoExtractorInterface} implementation.
  */
-class PropertyInfoExtraExtractor extends PropertyInfoExtractor
+class PropertyInfoExtraExtractor extends PropertyInfoExtractor implements PropertyInfoExtraExtractorInterface
 {
     protected $listExtractors;
     protected $typeExtractors;
@@ -31,10 +34,10 @@ class PropertyInfoExtraExtractor extends PropertyInfoExtractor
     protected $initializableExtractors;
 
     /**
-     * @param iterable|PropertyListExtractorInterface[]          $listExtractors
-     * @param iterable|PropertyTypeExtractorInterface[]          $typeExtractors
-     * @param iterable|PropertyDescriptionExtractorInterface[]   $descriptionExtractors
-     * @param iterable|PropertyAccessExtractorInterface[]        $accessExtractors
+     * @param iterable|PropertyListExtractorInterface[] $listExtractors
+     * @param iterable|PropertyTypeExtractorInterface[] $typeExtractors
+     * @param iterable|PropertyDescriptionExtractorInterface[] $descriptionExtractors
+     * @param iterable|PropertyAccessExtractorInterface[] $accessExtractors
      * @param iterable|PropertyInitializableExtractorInterface[] $initializableExtractors
      */
     public function __construct(iterable $listExtractors = [], iterable $typeExtractors = [], iterable $descriptionExtractors = [], iterable $accessExtractors = [], iterable $initializableExtractors = [])
@@ -49,7 +52,7 @@ class PropertyInfoExtraExtractor extends PropertyInfoExtractor
     }
 
     /**
-     * Gets the merged list of properties available for the given class.
+     * {@inheritdoc}
      */
     public function getAllProperties($class, array $context = [])
     {
@@ -65,7 +68,7 @@ class PropertyInfoExtraExtractor extends PropertyInfoExtractor
     }
 
     /**
-     * Gets merged types of a property.
+     * {@inheritdoc}
      */
     public function getAllTypes($class, $property, array $context = [])
     {
@@ -122,9 +125,7 @@ class PropertyInfoExtraExtractor extends PropertyInfoExtractor
     }
 
     /**
-     * Is the property readable?
-     * 
-     * @return bool|null `true` if at least one extractor reports `true`.
+     * {@inheritdoc}
      */
     public function isAllReadable($class, $property, array $context = [])
     {
@@ -140,9 +141,7 @@ class PropertyInfoExtraExtractor extends PropertyInfoExtractor
     }
 
     /**
-     * Is the property writable?
-     * 
-     * @return bool|null `true` if at least one extractor reports `true`.
+     * {@inheritdoc}
      */
     public function isAllWritable($class, $property, array $context = [])
     {
