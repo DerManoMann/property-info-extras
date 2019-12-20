@@ -3,15 +3,10 @@
 namespace Radebatz\PropertyInfoExtras\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Radebatz\PropertyInfoExtras\Extractor\DocBlockCache;
-use Radebatz\PropertyInfoExtras\Extractor\DocBlockMagicExtractor;
-use Radebatz\PropertyInfoExtras\PropertyInfoExtraExtractor;
 use Radebatz\PropertyInfoExtras\PropertyInfoExtraExtractorAdapter;
-use Radebatz\PropertyInfoExtras\Tests\Models\SimplePopo;
 use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;
 use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
 use Symfony\Component\PropertyInfo\PropertyInfoExtractor;
-use Symfony\Component\PropertyInfo\Type;
 
 class PropertyInfoExtraExtractorAdapterTest extends TestCase
 {

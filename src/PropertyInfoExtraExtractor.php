@@ -34,10 +34,10 @@ class PropertyInfoExtraExtractor extends PropertyInfoExtractor implements Proper
     protected $initializableExtractors;
 
     /**
-     * @param iterable|PropertyListExtractorInterface[] $listExtractors
-     * @param iterable|PropertyTypeExtractorInterface[] $typeExtractors
-     * @param iterable|PropertyDescriptionExtractorInterface[] $descriptionExtractors
-     * @param iterable|PropertyAccessExtractorInterface[] $accessExtractors
+     * @param iterable|PropertyListExtractorInterface[]          $listExtractors
+     * @param iterable|PropertyTypeExtractorInterface[]          $typeExtractors
+     * @param iterable|PropertyDescriptionExtractorInterface[]   $descriptionExtractors
+     * @param iterable|PropertyAccessExtractorInterface[]        $accessExtractors
      * @param iterable|PropertyInitializableExtractorInterface[] $initializableExtractors
      */
     public function __construct(iterable $listExtractors = [], iterable $typeExtractors = [], iterable $descriptionExtractors = [], iterable $accessExtractors = [], iterable $initializableExtractors = [])
