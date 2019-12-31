@@ -13,7 +13,7 @@ use Symfony\Component\PropertyInfo\Type;
 
 class PropertyInfoExtraExtractorTest extends TestCase
 {
-    protected $propertyInfoExtractor;
+    protected $propertyInfoExtraExtractor;
 
     protected function setUp(): void
     {
