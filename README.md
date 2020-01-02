@@ -5,6 +5,7 @@ Extensions for the Symfony property-info component.
 
 [![Build Status](https://travis-ci.org/DerManoMann/property-info-extras.png)](https://travis-ci.org/DerManoMann/property-info-extras)
 [![Coverage Status](https://coveralls.io/repos/github/DerManoMann/property-info-extras/badge.svg)](https://coveralls.io/github/DerManoMann/property-info-extras)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Requirements ##
 * [PHP 7.1 or higher](http://www.php.net/)
