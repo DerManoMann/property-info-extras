@@ -13,9 +13,18 @@ php:
   - nightly
 
 env:
+  global:
+    - CODE_COVERAGE=""
   matrix:
     - PREFER_LOWEST="--prefer-lowest --prefer-stable"
     - PREFER_LOWEST=""
+
+jobs:
+  include:
+    - php: 7.3
+      env:
+        - PREFER_LOWEST=""
+        - CODE_COVERAGE="--coverage-clover build/logs/clover.xml"
 
 before_install:
   - composer self-update
@@ -25,11 +34,11 @@ install:
 
 script:
   - mkdir -p build/logs
-  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+  - ./vendor/bin/phpunit $CODE_COVERAGE
   - if [[ $TRAVIS_PHP_VERSION < 7.4 ]] ; then composer run-script fix-cs; fi;
 
 after_script:
-  - if [[ $TRAVIS_PHP_VERSION = 7.3 && $PREFER_LOWEST = '' ]]; then php vendor/bin/php-coveralls -v; fi;
+  - if [[ $CODE_COVERAGE != "" ]]; then php vendor/bin/php-coveralls -v; fi;
 
 matrix:
   allow_failures:
