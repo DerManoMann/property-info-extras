@@ -40,7 +40,7 @@
         "php": ">=7.1",
         "ext-json": "*",
         "phpunit/phpunit": "^7.0|^8.0",
-        "symfony/property-info": "^4.3"
+        "symfony/property-info": "^5.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.15",
