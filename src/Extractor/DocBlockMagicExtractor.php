@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace Radebatz\PropertyInfoExtras\Extractor;
 
 use phpDocumentor\Reflection\DocBlock;
+use phpDocumentor\Reflection\DocBlock\Tags\Method;
 use Symfony\Component\PropertyInfo\PropertyAccessExtractorInterface;
 use Symfony\Component\PropertyInfo\PropertyListExtractorInterface;
 use Symfony\Component\PropertyInfo\PropertyTypeExtractorInterface;
@@ -52,11 +53,12 @@ class DocBlockMagicExtractor implements PropertyListExtractorInterface, Property
 
         $properties = [];
 
-        /** @var DocBlock\Tags\Method $method */
+        /** @var Method $method */
         foreach ($docBlock->getTagsByName('method') as $method) {
-            if ($method->isStatic()) {
+            if (!($method instanceof Method) || $method->isStatic()) {
                 continue;
             }
+
             $propertyName = $this->getPropertyName($method->getMethodName());
             if ($propertyName && !preg_match('/^[A-Z]{2,}/', $propertyName)) {
                 $propertyName = lcfirst($propertyName);
@@ -86,6 +88,10 @@ class DocBlockMagicExtractor implements PropertyListExtractorInterface, Property
 
         /** @var DocBlock\Tags\Method $method */
         foreach ($docBlock->getTagsByName('method') as $method) {
+            if (!($method instanceof Method)) {
+                continue;
+            }
+
             $methodName = $method->getMethodName();
 
             foreach ($this->dockBlockCache->getMutatorPrefixes() as $mutatorPrefix) {
