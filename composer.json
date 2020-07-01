@@ -37,9 +37,9 @@
         ]
     },
     "require": {
-        "php": ">=7.1",
+        "php": ">=7.2",
         "ext-json": "*",
-        "phpunit/phpunit": "^7.0|^8.0",
+        "phpunit/phpunit": "^8.0",
         "symfony/property-info": "^4.3|^5.0"
     },
     "require-dev": {
