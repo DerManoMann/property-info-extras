@@ -34,7 +34,7 @@ install:
 script:
   - mkdir -p build/logs
   - ./vendor/bin/phpunit $CODE_COVERAGE
-  - if [[ $TRAVIS_PHP_VERSION < 7.4 ]] ; then composer run-script fix-cs; fi;
+  - if [[ $TRAVIS_PHP_VERSION < 7.4 ]] ; then composer run-script lint; fi;
 
 after_script:
   - if [[ $CODE_COVERAGE != "" ]]; then php vendor/bin/php-coveralls -v; fi;
