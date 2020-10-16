@@ -26,6 +26,7 @@ jobs:
         - CODE_COVERAGE="--coverage-clover build/logs/clover.xml"
 
 before_install:
+  - if [[ $TRAVIS_PHP_VERSION > 7.4 ]] ; then sed -i '/friendsofphp\/php-cs-fixer/d' composer.json; fi;
   - composer self-update
 
 install:
