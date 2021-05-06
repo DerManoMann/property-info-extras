@@ -39,7 +39,7 @@ class DocBlockMagicExtractor implements PropertyListExtractorInterface, Property
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getProperties($class, array $context = [])
     {
@@ -70,7 +70,7 @@ class DocBlockMagicExtractor implements PropertyListExtractorInterface, Property
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getTypes($class, $property, array $context = [])
     {
@@ -150,7 +150,7 @@ class DocBlockMagicExtractor implements PropertyListExtractorInterface, Property
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function isReadable($class, $property, array $context = [])
     {
@@ -158,7 +158,7 @@ class DocBlockMagicExtractor implements PropertyListExtractorInterface, Property
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function isWritable($class, $property, array $context = [])
     {

@@ -20,7 +20,7 @@ class PropertyInfoExtraExtractorAdapter implements PropertyInfoExtraExtractorInt
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getAllProperties($class, array $context = [])
     {
@@ -28,7 +28,7 @@ class PropertyInfoExtraExtractorAdapter implements PropertyInfoExtraExtractorInt
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getAllTypes($class, $property, array $context = [])
     {
@@ -36,7 +36,7 @@ class PropertyInfoExtraExtractorAdapter implements PropertyInfoExtraExtractorInt
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function isAllReadable($class, $property, array $context = [])
     {
@@ -44,7 +44,7 @@ class PropertyInfoExtraExtractorAdapter implements PropertyInfoExtraExtractorInt
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function isAllWritable($class, $property, array $context = [])
     {
@@ -52,7 +52,7 @@ class PropertyInfoExtraExtractorAdapter implements PropertyInfoExtraExtractorInt
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function isReadable($class, $property, array $context = [])
     {
@@ -60,7 +60,7 @@ class PropertyInfoExtraExtractorAdapter implements PropertyInfoExtraExtractorInt
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function isWritable($class, $property, array $context = [])
     {
@@ -68,7 +68,7 @@ class PropertyInfoExtraExtractorAdapter implements PropertyInfoExtraExtractorInt
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getShortDescription($class, $property, array $context = [])
     {
@@ -76,7 +76,7 @@ class PropertyInfoExtraExtractorAdapter implements PropertyInfoExtraExtractorInt
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getLongDescription($class, $property, array $context = [])
     {
@@ -84,7 +84,7 @@ class PropertyInfoExtraExtractorAdapter implements PropertyInfoExtraExtractorInt
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function isInitializable(string $class, string $property, array $context = []): ?bool
     {
@@ -92,7 +92,7 @@ class PropertyInfoExtraExtractorAdapter implements PropertyInfoExtraExtractorInt
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getProperties($class, array $context = [])
     {
@@ -100,7 +100,7 @@ class PropertyInfoExtraExtractorAdapter implements PropertyInfoExtraExtractorInt
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getTypes($class, $property, array $context = [])
     {

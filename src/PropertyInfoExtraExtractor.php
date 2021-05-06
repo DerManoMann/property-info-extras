@@ -52,7 +52,7 @@ class PropertyInfoExtraExtractor extends PropertyInfoExtractor implements Proper
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getAllProperties($class, array $context = [])
     {
@@ -68,7 +68,7 @@ class PropertyInfoExtraExtractor extends PropertyInfoExtractor implements Proper
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getAllTypes($class, $property, array $context = [])
     {
@@ -125,7 +125,7 @@ class PropertyInfoExtraExtractor extends PropertyInfoExtractor implements Proper
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function isAllReadable($class, $property, array $context = [])
     {
@@ -141,7 +141,7 @@ class PropertyInfoExtraExtractor extends PropertyInfoExtractor implements Proper
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function isAllWritable($class, $property, array $context = [])
     {
