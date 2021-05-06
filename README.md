@@ -3,7 +3,7 @@ Extensions for the Symfony property-info component.
 * Magic class method extractor [DocBlockMagicExtractor](src/Extractor/DocBlockMagicExtractor.php)
 * Support for merging results of multiple extractors where possible
 
-[![Build Status](https://travis-ci.org/DerManoMann/property-info-extras.png)](https://travis-ci.org/DerManoMann/property-info-extras)
+[![Build Status](https://github.com/DerManoMann/property-info-extras/workflows/build/badge.svg)](https://github.com/DerManoMann/property-info-extras/actions?query=workflow:build)
 [![Coverage Status](https://coveralls.io/repos/github/DerManoMann/property-info-extras/badge.svg)](https://coveralls.io/github/DerManoMann/property-info-extras)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
