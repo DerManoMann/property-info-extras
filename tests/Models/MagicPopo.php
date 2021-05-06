@@ -14,20 +14,20 @@ declare(strict_types=1);
 namespace Radebatz\PropertyInfoExtras\Tests\Models;
 
 /**
- * @method string getProString()
- * @method void setProString(?string $proString)
- * @method string getPriString()
- * @method void setPriString(?string $priString)
- * @method int getProInt()
- * @method void setProInt(int $proInt)
- * @method bool getProBool()
- * @method void setProBool(bool $proBool)
- * @method SimplePopo getSimplePopo()
- * @method void setSimplePopo(SimplePopo $simplePopo)
- * @method int[] getProIntArr()
- * @method void setProIntArr(integer[] $proIntArr)
+ * @method string       getProString()
+ * @method void         setProString(?string $proString)
+ * @method string       getPriString()
+ * @method void         setPriString(?string $priString)
+ * @method int          getProInt()
+ * @method void         setProInt(int $proInt)
+ * @method bool         getProBool()
+ * @method void         setProBool(bool $proBool)
+ * @method SimplePopo   getSimplePopo()
+ * @method void         setSimplePopo(SimplePopo $simplePopo)
+ * @method int[]        getProIntArr()
+ * @method void         setProIntArr(integer[] $proIntArr)
  * @method SimplePopo[] getSimplePopoArr()
- * @method void setSimplePopoArr(SimplePopo[] $simplePopoArr)
+ * @method void         setSimplePopoArr(SimplePopo[] $simplePopoArr)
  */
 class MagicPopo implements \JsonSerializable
 {
@@ -55,7 +55,7 @@ class MagicPopo implements \JsonSerializable
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function jsonSerialize()
     {
